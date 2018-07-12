@@ -1,0 +1,471 @@
+body{
+    margin:0;
+    padding:0;
+    background: #E1FFFF;
+}
+.wrap{
+    width:700px;
+    height:400px;
+    margin: 50px auto;
+    position: relative;
+}
+.wrap .rigthCircle{
+    left:350px;
+}
+.bikeWrap{
+    width:206px;
+    height:206px;
+    margin:50px auto ;
+    position: absolute;
+    left:30px;
+    bottom:20px;
+
+}
+.bikeWrap .wheelWrap{
+    width:196px;
+    height:196px;
+    border: 5px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+}
+.bikeWrap .wheelWrap .wheelInner{
+    width:182px;
+    height:182px;
+    border-radius: 50%;
+    border: 4px solid #EF9058;
+    margin: 3px;
+    background: #E1FFFF;
+    position: relative;
+}
+.bikeWrap  .axisWrap{
+    position: absolute;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    background: #666;
+    top:50%;
+    left:50%;
+    margin-left:-10px;
+    margin-top:-10px;
+    z-index: 2;
+}
+.bikeWrap .axisWrap .innerAxis{
+    width:8px;
+    height:8px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-left: -6px;
+    margin-top:-6px;
+}
+
+/*车轮子丝线*/
+.bikeWrap .lines{
+    position: absolute;
+    left:50%;
+    height:206px;
+    width:1px;
+    /*background: #ccc;*/
+    z-index: 1;
+}
+.bikeWrap .lines .lineItem{
+    width:1px;
+    height:206px;
+    background: #ccc;
+    position: absolute;
+}
+.bikeWrap .lines .lineItem .dot{
+    width:3px;
+    height:3px;
+    background: #666;
+    border-radius: 50%;
+    position: absolute;
+    left:-1px;
+}
+.bikeWrap .lines .lineItem .dot:nth-child(1){
+    top:91px;
+}
+.bikeWrap .lines .lineItem .dot:nth-child(2){
+    top:112px;
+}
+.bikeWrap .lines .lineItem:nth-child(2){
+    transform: rotate(30deg);
+}
+.bikeWrap .lines .lineItem:nth-child(3){
+    transform: rotate(60deg);
+}
+.bikeWrap .lines .lineItem:nth-child(4){
+    transform: rotate(90deg);
+}
+.bikeWrap .lines .lineItem:nth-child(5){
+    transform: rotate(120deg);
+}
+.bikeWrap .lines .lineItem:nth-child(6){
+    transform: rotate(150deg);
+}
+
+/*车轮子转动动画*/
+@keyframes rotateCircle {
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/*车轮子开始旋转运动*/
+.bikeWrap{
+    animation: rotateCircle 2s infinite linear;
+}
+
+
+/*车杆*/
+.wrap .bikeRod{
+    /*position: absolute;*/
+    /*bottom:170px;*/
+    /*left:130px;*/
+}
+
+.wrap .bikeRod .rod{
+    width:7px;
+    background:#5E999B ;
+    transform-origin: bottom center;
+    z-index: 3;
+    position: absolute;
+    bottom:170px;
+    left:130px;
+
+}
+.wrap .bikeRod .leftTopRod{
+    height:155px;
+    background: #5E999B;
+    transform: rotate(35deg);
+    left:128px;
+}
+.wrap .bikeRod .bottomRod{
+    height:170px;
+    transform: rotate(90deg);
+    bottom:173px;
+}
+.wrap .bikeRod .leftMidRod{
+    height:170px;
+    left:215px;
+    bottom:295px;
+    transform: rotate(80deg);
+}
+.wrap .bikeRod .topMidRod{
+    bottom:172px;
+    height:215px;
+    left:300px;
+    transform: rotate(-35deg);
+}
+.wrap .bikeRod .rightBottomRod{
+    height:170px;
+    left:295px;
+    transform: rotate(35deg);
+}
+.wrap .bikeRod .rightRod {
+    height:215px;
+    left:450px;
+    transform: rotate(-23deg);
+}
+.wrap .bikeRod .rightTopRod {
+    height:70px;
+    left:364px;
+    bottom:366px;
+    transform: rotate(90deg);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.wrap .bikeRod .headRod {
+    width:40px;
+    height:40px;
+    border:7px solid #666;
+    background: transparent;
+    border-radius: 50%;
+    left:408px;
+    bottom:316px;
+    z-index: 1;
+}
+.wrap .bikeRod .mask {
+    height:40px;
+    width:40px;
+    position: absolute;
+    background: #E1FFFF;
+    left:390px;
+    bottom:335px;
+    z-index: 2;
+    transform: rotate(45deg);
+}
+
+.wrap .bikeSeat{
+    width:80px;
+    height:16px;
+    background: #666 ;
+    border-radius: 50%;
+    position: absolute;
+    left:137px;
+    bottom:346px;
+    z-index: 3;
+    transform-origin: center;
+    transform: rotate(-5deg);
+}
+.wrap .bikeSeat .bottomSeat{
+    width:30px;
+    height:14px;
+    background: #666 ;
+    border-radius: 50%;
+    position: absolute;
+    left:1px;
+    top:2px;
+    transform-origin: left;
+    transform: rotate(-3deg);
+}
+
+/*车轴旋转动画*/
+@keyframes axleRotate {
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+.wrap .axleWrap {
+    animation: axleRotate 3s infinite linear;
+}
+/*车轴*/
+.wrap .axleWrap{
+    position: absolute;
+    left:262px;
+    bottom:133px;
+    z-index: 4;
+}
+.wrap .axleWrap .axle{
+    width:70px;
+    height:70px;
+    border: 5px solid   #666;
+    border-radius: 50%;
+
+}
+.wrap .axleWrap .axle .innerAxle{
+    width:30px;
+    height:30px;
+    background: #666;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-left: -15px;
+    margin-top: -15px;
+    border-radius: 50%;
+    z-index: 3;
+}
+.wrap .axleWrap .axle .innerAxle .innerSmallAxle{
+    position: absolute;
+    width:18px;
+    height:18px;
+    left:50%;
+    top:50%;
+    margin-left:-11px;
+    margin-top: -11px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.wrap .axleWrap .axle .lines .item{
+    width:3px;
+    height:80px;
+    background: #666;
+    position: absolute;
+    left:50%;
+    margin-left:-1px;
+    margin-top: -5px;
+    z-index: 2;
+}
+.wrap .axleWrap .axle .lines .item:nth-child(1){
+    width: 4px;
+    margin-left: -2px;
+    height:140px;
+    top:-30px;
+}
+.wrap .axleWrap .axle .lines .item:nth-child(1) .pedal{
+    width:38px;
+    height:9px;
+    background: #666;
+    position: absolute;
+    left:-17px;
+
+}
+
+/*踏板动画*/
+@keyframes topPedalRotate {
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(-180deg);
+    }
+
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+@keyframes bottomPedalRotate {
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(-180deg);
+    }
+
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+.wrap .axleWrap .axle .lines .item:nth-child(1) .topPedal{
+    top:-9px;
+    animation: topPedalRotate 3s infinite linear;
+}
+.wrap .axleWrap .axle .lines .item:nth-child(1) .bottomPedal{
+    bottom:-9px;
+    animation: bottomPedalRotate 3s infinite linear;
+}
+
+.wrap .axleWrap .axle .lines .item:nth-child(2){
+    transform: rotate(60deg);
+}
+.wrap .axleWrap .axle .lines .item:nth-child(3){
+    transform: rotate(120deg);
+}
+.wrap .axleWrap .axle .dots{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    left:0px;
+    top:0px;
+    border-radius: 50%;
+    border-color:transparent;
+}
+
+.wrap .axleWrap .axle .dots .dotsItem {
+    width:1px;
+    height:100%;
+    /*background:#666;*/
+    position: absolute;
+    left:50%;
+    transform-origin: center;
+}
+.wrap .axleWrap .axle .dots .dotsItem:nth-child(2){
+    transform: rotate(20deg);
+}
+.wrap .axleWrap .axle .dots .dotsItem:nth-child(3){
+    transform: rotate(40deg);
+}
+.wrap .axleWrap .axle .dots .dotsItem:nth-child(4){
+    transform: rotate(60deg);
+}
+.wrap .axleWrap .axle .dots .dotsItem:nth-child(5){
+    transform: rotate(80deg);
+}
+.wrap .axleWrap .axle .dots .dotsItem:nth-child(6){
+    transform: rotate(100deg);
+}
+.wrap .axleWrap .axle .dots .dotsItem:nth-child(7){
+    transform: rotate(120deg);
+}
+.wrap .axleWrap .axle .dots .dotsItem:nth-child(8){
+    transform: rotate(140deg);
+}
+.wrap .axleWrap .axle .dots .dotsItem:nth-child(9){
+    transform: rotate(160deg);
+}
+.wrap .axleWrap .axle .dots .dotsItem .dot{
+    width:4px;
+    height:4px;
+    background: #666;
+    border-radius: 50%;
+    margin-left: -2px;
+    position: absolute;
+}
+.wrap .axleWrap .axle .dots .dotsItem .dot:nth-child(1){
+    top:-3px;
+}
+.wrap .axleWrap .axle .dots .dotsItem .dot:nth-child(2){
+    bottom:-3px;
+}
+
+
+/*车链*/
+.wrap .topChain{
+    width:180px;
+    height:4px;
+    left:128px;
+    bottom:181px;
+    position: absolute;
+    z-index: 4;
+    transform-origin: left center  ;
+    transform: rotate(-10deg);
+    border-radius: 2px;
+    background-image:linear-gradient(90deg, #666 25%, transparent 25%, transparent 75%, #666 75%, #666) ;
+    background-size: 8px 2px;
+    background-position: 0 0;
+}
+.wrap .bottomChain{
+    width:180px;
+    height:4px;
+    left:128px;
+    bottom:160px;
+    position: absolute;
+    transform-origin: left;
+    transform: rotate(10deg);
+    z-index: 4;
+    border-radius: 2px;
+    background-image:linear-gradient(90deg, #666 25%, transparent 25%, transparent 75%, #666 75%, #666) ;
+    background-size: 8px 2px;
+    background-position: 0 0;
+}
+
+/*车链的动画*/
+@keyframes leftChain {
+    0%{
+        background-position:0px 0px, 30px 30px;
+    }
+    50%{
+        background-position:180px 0px, 30px 30px;
+    }
+    100%{
+        background-position:360px 0px, 30px 30px;
+    }
+}
+@keyframes rightChain {
+    0%{
+        background-position:360px 0px, 30px 30px;
+    }
+    50%{
+        background-position:180px 0px, 30px 30px;
+    }
+    100%{
+        background-position:0px 0px, 30px 30px;
+    }
+}
+.wrap .topChain {
+    animation: leftChain 4s infinite linear;
+}
+.wrap .bottomChain {
+    animation: rightChain 4s infinite linear;
+}
+
+
+
+
+
+
